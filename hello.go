@@ -1,9 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func Hello(name string) string {
-	return "Hello, " + name
+
+func Hello(name, lang string) string {
+	langs := map[string]string{
+		"english": "Hello, ",
+		"spanish": "Hola, ",
+	}
+	if lang == "" {
+		lang = "english"
+	}
+	if name == "" {
+		name = "World"
+	}
+	if _, exists := langs[lang]; !exists {
+		lang = "english"
+	}
+	hello := langs[lang]
+	return hello + name
 }
 
 func main() {
