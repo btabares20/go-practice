@@ -1,8 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
+package helloworld
 
 
 func Hello(name, lang string) string {
@@ -21,8 +17,4 @@ func Hello(name, lang string) string {
 	}
 	hello := langs[lang]
 	return hello + name
-}
-
-func main() {
-	fmt.Println("ok")
 }
